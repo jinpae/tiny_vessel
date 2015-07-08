@@ -1,0 +1,17 @@
+<div class="container">
+	<h1>Create New Post</h1>
+
+	<%= form_for @forum_post do |f| %>
+		<%= render 'shared/errors', object: @forum_post %>
+
+		<%= f.text_field :title, placeholder: 'Title', autofocus: true %>
+		<%= f.collection_select :category_id, Category.all, :id, :name, prompt: 'Please Select a Category' %>
+		<%= f.text_area :body, placeholder: 'Body', rows: 10 %>
+
+		<div class="control-btn-group">
+			<%= f.submit 'Submit' %>
+			<%= link_to 'Cancel', root_path %>
+			<%= link_to 'Parsed with Markdown', 'https://guides.github.com/features/mastering-markdown/', target: '_blank' %>
+		</div>
+	<% end %>
+</div>
