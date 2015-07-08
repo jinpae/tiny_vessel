@@ -27,4 +27,10 @@ class ApplicationController < ActionController::Base
 				:website_url
 			])
 		end
+
+		def current_user?(user)
+			current_user == user
+		end
+
+		helper_method :current_user?
 end

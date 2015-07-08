@@ -3,7 +3,7 @@ class ForumPostsController < ApplicationController
 	before_action :set_forum_post, except: [:index, :new, :create]
 
 	def index
-		@forum_posts = ForumPost.all
+		@forum_posts = ForumPost.all.order(id: :desc)
 	end
 
 	def show
@@ -17,7 +17,7 @@ class ForumPostsController < ApplicationController
 		@forum_post = current_user.forum_posts.new(forum_post_params)
 		
 		if @forum_post.save
-			redirect_to root_path, notice: "New post created successfully."
+			redirect_to forum_posts_path, notice: "New post created successfully."
 		else
 			render :new
 		end
@@ -27,6 +27,11 @@ class ForumPostsController < ApplicationController
 	end
 
 	def update
+		if @forum_post.update(forum_post_params)
+			redirect_to forum_posts_path, notice: "Post updated successfully."
+		else
+			render :edit
+		end
 	end
 
 	def destroy

@@ -1,0 +1,12 @@
+<%= link_to '&larr; Back to the forum'.html_safe, forum_posts_path %>
+
+<h1><%= @forum_post.title %></h1>
+
+<p class="post-description">Posted by <%= get_author(@forum_post) %> <%= time_ago_in_words @forum_post.created_at %> ago | <%= @forum_post.category.name %></p>
+
+<p class="post-body"><%= @forum_post.body %></p>
+
+<% if current_user?(@forum_post.user) %>
+	<%= link_to 'Edit', edit_forum_post_path(@forum_post) %>
+	<%= link_to 'Delete', forum_post_path(@forum_post), method: :delete, data: { confirm: 'Are you sure to delete this post?' } %>
+<% end %>

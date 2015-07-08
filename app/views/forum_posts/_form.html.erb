@@ -1,0 +1,18 @@
+<%= form_for @forum_post do |f| %>
+	<%= render 'shared/errors', object: @forum_post %>
+
+	<%= f.text_field :title, placeholder: 'Title', autofocus: true %>
+	<%= f.collection_select :category_id, Category.all, :id, :name, prompt: 'Please Select a Category' %>
+	<%= f.text_area :body, placeholder: 'Body', rows: 10 %>
+
+	<div class="control-btn-group">
+		<% if @forum_post.new_record? %>
+			<%= f.submit 'Submit' %>
+		<% else %>
+			<%= f.submit 'Update' %>
+		<% end %>
+
+		<%= link_to 'Cancel', :back %>
+		<%= link_to 'Parsed with Markdown', 'https://guides.github.com/features/mastering-markdown/', target: '_blank' %>
+	</div>
+<% end %>
