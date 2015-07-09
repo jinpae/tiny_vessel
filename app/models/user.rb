@@ -16,7 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  name                   :string
-#  username               :string           default(""), not null
+#  username               :string
 #  bio                    :text
 #  twitter_id             :string
 #  github_id              :string
@@ -37,6 +37,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-	has_many :forum_posts
-	has_many :forum_replies
+	has_many :forum_posts, dependent: :destroy
+	has_many :forum_replies, dependent: :destroy
 end

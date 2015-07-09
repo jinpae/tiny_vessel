@@ -2,11 +2,22 @@
 
 <h1><%= @forum_post.title %></h1>
 
-<p class="post-description">Posted by <%= get_author(@forum_post) %> <%= time_ago_in_words @forum_post.created_at %> ago | <%= @forum_post.category.name %></p>
+<p class="post-description">
+	Posted by <%= get_author(@forum_post) %> <%= time_ago_in_words @forum_post.created_at %> ago | <%= @forum_post.category.name %>
+
+	<% if current_user?(@forum_post.user) %>
+		| <%= link_to 'Edit', edit_forum_post_path(@forum_post) %>
+		| <%= link_to 'Delete', forum_post_path(@forum_post), method: :delete, data: { confirm: 'Are you sure to delete this post?' } %>
+	<% end %>
+</p>
 
 <p class="post-body"><%= @forum_post.body %></p>
 
-<% if current_user?(@forum_post.user) %>
-	<%= link_to 'Edit', edit_forum_post_path(@forum_post) %>
-	<%= link_to 'Delete', forum_post_path(@forum_post), method: :delete, data: { confirm: 'Are you sure to delete this post?' } %>
+<%= render partial: 'forum_posts/forum_replies/forum_reply',
+	collection: @forum_post.forum_replies %>
+
+<% if user_signed_in? %>
+	<%= render 'forum_posts/forum_replies/form' %>
+<% else %>
+	<p>Please <%= link_to 'sign in', new_user_session_path %> to add a reply.</p>
 <% end %>

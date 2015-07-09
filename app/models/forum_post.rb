@@ -17,9 +17,11 @@
 #
 
 class ForumPost < ActiveRecord::Base
+	default_scope { order(created_at: :desc) }
+
   belongs_to :user
   belongs_to :category
-	has_many :forum_replies
+	has_many :forum_replies, dependent: :destroy
 
 	validates :title, presence: true
 	validates :body, presence: true

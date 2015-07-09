@@ -12,7 +12,7 @@
 			<%= f.submit 'Update' %>
 		<% end %>
 
-		<%= link_to 'Cancel', :back %>
+		<%= link_to 'Cancel', @forum_post.new_record? ? forum_posts_path : @forum_post %>
 		<%= link_to 'Parsed with Markdown', 'https://guides.github.com/features/mastering-markdown/', target: '_blank' %>
 	</div>
 <% end %>

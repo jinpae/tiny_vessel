@@ -16,7 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  name                   :string
-#  username               :string           default(""), not null
+#  username               :string
 #  bio                    :text
 #  twitter_id             :string
 #  github_id              :string

@@ -3,10 +3,11 @@ class ForumPostsController < ApplicationController
 	before_action :set_forum_post, except: [:index, :new, :create]
 
 	def index
-		@forum_posts = ForumPost.all.order(id: :desc)
+		@forum_posts = ForumPost.all
 	end
 
 	def show
+		@forum_reply = ForumReply.new
 	end
 
 	def new
