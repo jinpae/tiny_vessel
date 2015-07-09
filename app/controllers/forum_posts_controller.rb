@@ -18,7 +18,7 @@ class ForumPostsController < ApplicationController
 		@forum_post = current_user.forum_posts.new(forum_post_params)
 		
 		if @forum_post.save
-			redirect_to forum_posts_path, notice: "New post created successfully."
+			redirect_to @forum_post, notice: "New post created successfully."
 		else
 			render :new
 		end
@@ -29,7 +29,7 @@ class ForumPostsController < ApplicationController
 
 	def update
 		if @forum_post.update(forum_post_params)
-			redirect_to forum_posts_path, notice: "Post updated successfully."
+			redirect_to @forum_post, notice: "Post updated successfully."
 		else
 			render :edit
 		end
