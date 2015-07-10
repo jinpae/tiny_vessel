@@ -1,0 +1,56 @@
+@import 'colors';
+
+.post-wrap {
+	@extend %clearfix;
+	@include display(flex);
+	@include align-items(center);
+	padding: 1.3em 0;
+	border-bottom: 1px solid $light-gray;
+
+	.avatar-wrap,
+	.post-reply-count {
+		@include flex(none);
+	}
+
+	.avatar {
+		border-radius: 50%;
+		@include size(48px);
+	}
+
+	.avatar-wrap {
+		margin-right: 2rem;
+	}
+
+	.post-content {
+		@include flex(1);
+
+		h2 {
+			margin: 0;
+			color: $title-link;
+			font-size: 1.7em;
+			font-weight: 400;
+
+			a {
+				text-decoration: none;
+				@include transition(all .2s ease-in-out);
+
+				&:hover {
+					padding-left: 5px;
+				}
+			}
+		}
+
+		p {
+			margin-top: .7em;
+			margin-bottom: 0;
+			font-size: .85em;
+			letter-spacing: .01em;
+			color: $primary;
+		}
+	}
+
+	.post-reply-count {
+		text-align: center;
+		font-size: 1.1rem;
+	}
+}

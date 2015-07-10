@@ -19,6 +19,8 @@
 class ForumPost < ActiveRecord::Base
 	default_scope { order(created_at: :desc) }
 
+	scope :latest_posts, ->(n=10) { limit(n) }
+
   belongs_to :user
   belongs_to :category
 	has_many :forum_replies

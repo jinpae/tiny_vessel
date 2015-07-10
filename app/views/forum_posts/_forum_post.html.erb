@@ -1,0 +1,22 @@
+<div class="post-wrap">
+	<div class="avatar-wrap">
+		<%= profile_image_for forum_post.user, 'avatar' %>
+	</div>
+
+	<div class="post-content">
+		<h2>
+			<%= link_to forum_post.title, forum_post, class: 'forum-post-title' %>
+		</h2>
+
+		<p class="post-description">
+			Posted by <%= get_author(forum_post) %> <%= time_ago_in_words forum_post.created_at %> ago | <%= forum_post.category.name %>
+		</p>
+	</div>
+
+	<div class="post-reply-count">
+		<p class="reply-count">
+			<%= forum_post.forum_replies.count %><br>
+			<%= pluralize_without_count(forum_post.forum_replies.count, 'reply').capitalize %>
+		</p>
+	</div>
+</div>

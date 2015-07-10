@@ -1,4 +1,4 @@
-module ForumPostHelper
+module ForumPostsHelper
 	def get_author(post)
 		user = post.user
 

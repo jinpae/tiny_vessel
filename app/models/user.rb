@@ -45,4 +45,8 @@ class User < ActiveRecord::Base
 		allow_blank: true,
 		format: /\A[A-Z0-9]+[-_]*[A-Z0-9]+\z/i,
 		uniqueness: { case_sensitive: false }
+
+	def gravatar_id
+		Digest::MD5::hexdigest(email.downcase)
+	end
 end

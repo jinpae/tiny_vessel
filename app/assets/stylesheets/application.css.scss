@@ -18,6 +18,7 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'home';
+@import 'forum_post';
 
 html {
 	box-sizing: border-box;
@@ -32,9 +33,13 @@ html {
 	}
 }
 
+a {
+	color: inherit;
+}
+
 body {
 	font-family: 'Questrial', sans-serif;
-	color: $default-dark;
+	color: $default-text;
 }
 
 .container {
@@ -76,4 +81,18 @@ body {
 	font-size: 1.2rem;
 	text-transform: uppercase;
 	border-radius: .2em;
+}
+
+/*
+  ========================================
+	PAGES
+  ========================================
+*/
+.page-wrap {
+	margin: 6rem 0;
+}
+
+.section-title {
+	font-size: 2.4rem;
+	margin-bottom: 2.2rem;
 }
