@@ -44,6 +44,8 @@ group :development, :test do
 end
 
 gem 'devise'
+gem 'bourbon'
+gem 'font-awesome-sass'
 
 group :development do
 	gem 'annotate'

@@ -1,0 +1,62 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'colors';
+
+#hero {
+	text-align: center;
+	background: $primary;
+	padding: 4.5rem 0 5rem 0;
+
+	svg {
+		@include size(140px);
+	}
+
+	.lead-wrap {
+		@extend %clearfix;
+
+		.curly-braces,
+		.lead {
+			vertical-align: middle;
+		}
+
+		.curly-braces {
+			color: darken($secondary, 7%);
+			display: inline-block;
+			font-size: 10rem;
+			line-height: 10rem;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.right-curly-brace {
+			margin-right: 3rem;
+		}
+
+		.left-curly-brace {
+			margin-left: 3rem;
+		}
+
+		.lead {
+			display: inline-block;
+			font-size: 1.7rem;
+			line-height: 1.5;
+		}
+	}
+
+	.cta-btn-group {
+		margin: 1.4rem 1rem 1rem 1rem;
+
+		a:first-child {
+			margin-right: 60px;
+		}
+
+		a {
+			background: $default-dark;
+			color: $secondary;
+			min-width: 160px;
+			display: inline-block;
+		}
+	}
+}

@@ -1,2 +1,20 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<main role="main" id="hero">
+	<div class="container">
+		<div class="logo">
+			<%= render 'layouts/logo' %>
+		</div>
+	
+		<div class="lead-wrap">
+			<p class="curly-braces right-curly-brace">&#123;</p>
+			<p class="lead">
+				<strong>Tiny Vessel</strong> is a community forum for web developers and designers.<br>
+				Ask questions, get help, and discuss what matters to you.
+			</p>
+			<p class="curly-braces left-curly-brace">&#125;</p>
+		</div>
+	
+		<div class="cta-btn-group">
+			<%= link_to 'Join Now', new_user_registration_path, class: 'btn btn-lg' %><%= link_to 'Sign In', new_user_session_path, class: 'btn btn-lg' %>
+		</div>
+	</div>
+</main>

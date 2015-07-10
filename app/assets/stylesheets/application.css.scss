@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+
+@import 'bourbon';
+@import 'normalize';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'home';
+
+html {
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
+}
+
+body {
+	font-family: 'Questrial', sans-serif;
+	color: $default-dark;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+/*
+  ========================================
+  PLACE HOLDERS
+  ========================================
+*/
+%clearfix {
+	zoom: 1;
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+/*
+  ========================================
+  BUTTONS
+  ========================================
+*/
+.btn {
+	text-decoration: none;
+}
+
+.btn-lg {
+	padding: 1.4rem 2rem;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	border-radius: .2em;
+}
