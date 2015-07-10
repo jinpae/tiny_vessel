@@ -21,7 +21,7 @@ class ForumPost < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :category
-	has_many :forum_replies, dependent: :destroy
+	has_many :forum_replies
 
 	validates :title, presence: true
 	validates :body, presence: true

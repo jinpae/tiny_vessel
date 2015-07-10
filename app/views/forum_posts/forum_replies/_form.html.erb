@@ -3,6 +3,11 @@
 		<%= render 'shared/errors', object: @forum_reply %>
 
 		<%= f.text_area :body, rows: 10, placeholder: 'Add a reply' %>
-		<%= f.submit %>
+		<% if @forum_reply.new_record? %>
+			<%= f.submit 'Reply' %>
+		<% else %>
+				<%= f.submit 'Update' %>
+				<%= link_to 'Cancel', @forum_post %>
+		<% end %>
 	<% end %>
 </div>

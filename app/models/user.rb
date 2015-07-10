@@ -37,6 +37,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-	has_many :forum_posts, dependent: :destroy
-	has_many :forum_replies, dependent: :destroy
+	has_many :forum_posts
+	has_many :forum_replies
+
+	validates :username,
+		length: { minimum: 6 },
+		allow_blank: true,
+		format: /\A[A-Z0-9]+[-_]*[A-Z0-9]+\z/i,
+		uniqueness: { case_sensitive: false }
 end

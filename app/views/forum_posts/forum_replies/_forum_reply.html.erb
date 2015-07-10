@@ -3,7 +3,6 @@
 
 	<% if current_user?(forum_reply.user) %>
 		| <%= link_to 'Edit', edit_forum_post_forum_reply_path(forum_reply.forum_post, forum_reply) %>
-		| <%= link_to 'Delete', [forum_reply.forum_post, forum_reply], method: :delete, data: { confirm: 'Are you sure to delete this reply?' } %>
 	<% end %>
 </p>
 

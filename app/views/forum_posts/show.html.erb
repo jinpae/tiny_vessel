@@ -7,7 +7,6 @@
 
 	<% if current_user?(@forum_post.user) %>
 		| <%= link_to 'Edit', edit_forum_post_path(@forum_post) %>
-		| <%= link_to 'Delete', forum_post_path(@forum_post), method: :delete, data: { confirm: 'Are you sure to delete this post?' } %>
 	<% end %>
 </p>
 
