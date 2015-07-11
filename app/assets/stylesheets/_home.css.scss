@@ -60,3 +60,14 @@
 		}
 	}
 }
+
+.btn-wrap {
+	text-align: center;
+	margin: 4rem 0 6rem 0;
+
+	a {
+		background: $primary;
+		color: white;
+		display: inline-block;
+	}
+}
