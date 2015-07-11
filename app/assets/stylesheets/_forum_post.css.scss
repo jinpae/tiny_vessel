@@ -1,5 +1,21 @@
 @import 'colors';
 
+.general {
+	background: $category-general;
+}
+
+.front-end {
+	background: $category-front-end;
+}
+
+.back-end {
+	background: $category-back-end;
+}
+
+.design {
+	background: $category-design;
+}
+
 .post-wrap {
 	@extend %clearfix;
 	@include display(flex);
@@ -27,8 +43,9 @@
 		h2 {
 			margin: 0;
 			color: $title-link;
-			font-size: 1.7em;
+			font-size: 1.8em;
 			font-weight: 400;
+			letter-spacing: -.02em;
 
 			a {
 				text-decoration: none;
@@ -41,11 +58,25 @@
 		}
 
 		p {
-			margin-top: .7em;
+			margin-top: .5em;
 			margin-bottom: 0;
-			font-size: .85em;
 			letter-spacing: .01em;
-			color: $primary;
+			color: $gray;
+
+			.author {
+				text-decoration: none;
+			}
+
+			.category-tag {
+				color: white;
+				text-transform: uppercase;
+				padding: .6em 1em;
+				font-size: .6rem;
+				letter-spacing: .15em;
+				border-radius: 1.5em;
+				display: inline-block;
+				vertical-align: middle;
+			}
 		}
 	}
 

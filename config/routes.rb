@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 		resources :forum_replies, module: :forum_posts
 	end
 
+	resources :users, only: [:show]
+
   root 'home#index'
 end

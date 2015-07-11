@@ -9,7 +9,7 @@
 		</h2>
 
 		<p class="post-description">
-			Posted by <%= get_author(forum_post) %> <%= time_ago_in_words forum_post.created_at %> ago | <%= forum_post.category.name %>
+		Posted by <strong><%= link_to get_author(forum_post), forum_post.user, class: 'author' %></strong> <%= time_ago_in_words forum_post.created_at %> ago // <span class="category-tag <%= forum_post.category.name.downcase %>"><%= forum_post.category.name %></span>
 		</p>
 	</div>
 
