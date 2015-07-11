@@ -22,6 +22,8 @@
 
 html {
 	box-sizing: border-box;
+	height: 100vh;
+	height: 100%;
 }
 
 * {
@@ -40,6 +42,10 @@ a {
 body {
 	font-family: 'Questrial', sans-serif;
 	color: $default-text;
+	@include display(flex);
+	@include flex-direction(column);
+	height: 100vh;
+	height: 100%;
 }
 
 .container {
@@ -89,12 +95,65 @@ body {
   ========================================
 */
 .page-wrap {
-	margin: 6rem 0;
+	margin: 4rem 0;
+	@include flex(1 0 auto);
 }
 
 .section-title {
 	font-size: 2.4rem;
 	margin-bottom: 2.2rem;
+	margin-top: 0;
+}
+
+/*
+  ========================================
+	HEADER
+  ========================================
+*/
+header {
+	@extend %clearfix;
+	@include flex(none);
+	padding: 1rem 0;
+	border-bottom: 1px solid $light-gray;
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			color: $btn-normal;
+		}
+	}
+
+	.navbar-brand {
+		float: left;
+		text-transform: uppercase;
+		font-size: 1.6em;
+		letter-spacing: -1px;
+		font-weight: 700;
+	}
+
+	nav {
+		float: right;
+
+		ul {
+			list-style: none;
+			margin: 0;
+
+			li {
+				display: inline-block;
+
+				a {
+					margin-left: 20px;
+					line-height: 26px;
+				}
+			}
+		}
+	}
+
+	.navbar-toggle {
+		float: right;
+		display: none;
+	}
 }
 
 /*
@@ -103,9 +162,10 @@ body {
   ========================================
 */
 footer {
+	@include flex(none);
 	text-align: center;
 	background: $default-text;
-	color: $secondary;
+	color: $footer-text;
 	padding: 1rem 0;
 	
 	.copyright-wrap {
@@ -121,6 +181,10 @@ footer {
 
 		a {
 			margin-left: 10px;
+
+			&:hover {
+				color: white;
+			}
 		}
 	}
 

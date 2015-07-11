@@ -1,8 +1,12 @@
-<h1>Forum Posts</h1>
-
-<div class="control-btn-group">
-	<%= link_to 'New Post', new_forum_post_path, class: 'btn btn-primary' %>
-	<%= select_tag :category, options_from_collection_for_select(Category.all, :id, :name) %>
-</div>
-
-<%= render @forum_posts %>
+<section class="page-wrap">
+	<div class="container">
+		<h1 class="section-title">Forum Posts</h1>
+		
+		<div class="control-btn-group">
+			<%= link_to 'New Post', new_forum_post_path, class: 'btn btn-primary' %>
+			<%= select_tag :category, options_from_collection_for_select(Category.all, :id, :name) %>
+		</div>
+		
+		<%= render @forum_posts %>
+	</div>
+</section>

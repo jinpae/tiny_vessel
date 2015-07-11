@@ -1,15 +1,22 @@
+// Base colors
+$gray: #868686;
+$light-gray: #e6e6e6;
+$dark-green: #4b6265; 
+$sea-green: #25abb7;
+
+// Elements
 $primary: #abb7b7;
 $secondary: #e0e5e5;
 $default-text: #272727;
 $title-link: #453f3c;
-$light-gray: #e6e6e6;
-$gray: #868686;
-$dark-green: #4b6265; 
-$btn-main: $dark-green;
-$btn-normal: #25abb7;
+$footer-text: #777;
 
-// Category Colors
-$category-general: $btn-normal;
+// Buttons
+$btn-main: $dark-green;
+$btn-normal: $sea-green;
+
+// Category colors
+$category-general: $sea-green;
 $category-front-end: #96c974;
 $category-back-end: #ff7373;
 $category-design: #f2d373;
