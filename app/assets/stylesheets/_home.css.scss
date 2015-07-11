@@ -53,10 +53,15 @@
 		}
 
 		a {
-			background: $default-text;
+			background: $btn-main;
 			color: $secondary;
 			min-width: 160px;
 			display: inline-block;
+			text-transform: uppercase;
+
+			&:hover {
+				box-shadow: 0px 0px 0px 2px $primary, 0px 0px 0px 4px $btn-main;
+			}
 		}
 	}
 }
@@ -66,8 +71,12 @@
 	margin: 4rem 0 6rem 0;
 
 	a {
-		background: $primary;
+		background: $btn-normal;
 		color: white;
 		display: inline-block;
+
+		&:hover {
+			background: darken($btn-normal, 15%);
+		}
 	}
 }
