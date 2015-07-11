@@ -43,7 +43,6 @@
 		.forum-post-title {
 			margin: 0;
 			color: $title-link;
-			font-size: 1.7em;
 			font-weight: 400;
 			letter-spacing: -.02em;
 
@@ -62,10 +61,15 @@
 			margin-bottom: 0;
 			letter-spacing: 0;
 			color: $gray;
+			font-size: .85rem;
 
 			.author {
 				text-decoration: none;
 				color: darken($gray, 15%);
+
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 
 			.category-tag {
