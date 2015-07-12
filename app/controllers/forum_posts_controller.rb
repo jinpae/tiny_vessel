@@ -3,7 +3,7 @@ class ForumPostsController < ApplicationController
 	before_action :set_forum_post, except: [:index, :new, :create]
 
 	def index
-		@forum_posts = ForumPost.all
+		@forum_posts = ForumPost.page(params[:page])
 	end
 
 	def show

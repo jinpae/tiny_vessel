@@ -76,12 +76,6 @@
 	margin: 4rem 0 2rem 0;
 
 	a {
-		background: $btn-normal;
-		color: white;
 		display: inline-block;
-
-		&:hover {
-			background: darken($btn-normal, 15%);
-		}
 	}
 }

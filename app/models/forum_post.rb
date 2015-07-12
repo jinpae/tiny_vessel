@@ -28,4 +28,6 @@ class ForumPost < ActiveRecord::Base
 	validates :title, presence: true
 	validates :body, presence: true
 	validates :category_id, presence: true
+
+	self.per_page = 20
 end

@@ -3,10 +3,23 @@
 		<h1 class="section-title">Forum Posts</h1>
 		
 		<div class="control-btn-group">
-			<%= link_to 'New Post', new_forum_post_path, class: 'btn btn-primary' %>
-			<%= select_tag :category, options_from_collection_for_select(Category.all, :id, :name) %>
+			<%= link_to 'New Post', new_forum_post_path, class: 'btn btn-primary btn-md' %>
+			<div id="category-dropdown-wrap" tabindex="5">
+				<p>All Categories <i class="fa fa-caret-down"></i></p>
+				<ul class="dropdown">
+					<% Category.all.each do |cat| %>
+						<li>
+							<%= link_to cat.name, '#' %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
 		</div>
 		
 		<%= render @forum_posts %>
+
+		<div class="text-center">
+			<%= will_paginate @forum_posts %>
+		</div>
 	</div>
 </section>
