@@ -1,9 +1,10 @@
 class ForumPostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	before_action :set_forum_post, only: [:show, :edit, :update, :destroy]
+	before_action :set_q, except: [:show, :new, :create, :edit, :update, :destroy]
 
 	def index
-		@forum_posts = ForumPost.page(params[:page])
+		@forum_posts = paginate @q.result(distinct: true)
 	end
 
 	def show
@@ -39,22 +40,22 @@ class ForumPostsController < ApplicationController
 	end
 
 	def general
-		@forum_posts = ForumPost.general.page(params[:page])
+		@forum_posts = paginate ForumPost.general
 		render :index
 	end
 
 	def front_end
-		@forum_posts = ForumPost.front_end.page(params[:page])
+		@forum_posts = paginate ForumPost.front_end
 		render :index
 	end
 
 	def back_end
-		@forum_posts = ForumPost.back_end.page(params[:page])
+		@forum_posts = paginate ForumPost.back_end
 		render :index
 	end
 
 	def design
-		@forum_posts = ForumPost.design.page(params[:page])
+		@forum_posts = paginate ForumPost.design
 		render :index
 	end
 
@@ -65,5 +66,13 @@ class ForumPostsController < ApplicationController
 
 		def forum_post_params
 			params.require(:forum_post).permit(:title, :body, :category_id)
+		end
+
+		def set_q
+			@q = ForumPost.search(params[:q])
+		end
+
+		def paginate(posts)
+			posts.page(params[:page])
 		end
 end

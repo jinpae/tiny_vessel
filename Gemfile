@@ -47,6 +47,7 @@ gem 'devise'
 gem 'bourbon'
 gem 'font-awesome-sass'
 gem 'will_paginate', '~> 3.0.7'
+gem 'ransack', '~> 1.6.6'
 
 group :development do
 	gem 'annotate'

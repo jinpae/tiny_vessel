@@ -111,7 +111,7 @@ body {
   ========================================
 */
 .page-wrap {
-	margin: 4rem 0;
+	margin: 4rem 0 6rem 0;
 	@include flex(1 0 auto);
 }
 
@@ -119,6 +119,17 @@ body {
 	font-size: 2.4rem;
 	margin-bottom: 2.2rem;
 	margin-top: 0;
+}
+
+.control-btn-group {
+	@extend %clearfix;
+	position: relative;
+	margin-bottom: 2rem;
+
+	#new-post-btn {
+		float: right;
+		margin-right: 194px;
+	}
 }
 
 /*
@@ -273,7 +284,8 @@ footer {
 	position: absolute;
 	background: white;
 	z-index: 999;
-	margin-left: 1rem;
+	//margin-left: 1rem;
+	right: 0;
 
 	&:focus {
 		outline: none;
@@ -321,6 +333,22 @@ footer {
 		overflow: auto;
 		max-height: calc(4 * 2rem + 4rem);
 		margin-top: 1rem;
+	}
+}
+
+/*
+  ========================================
+	SEARCH FIELD
+  ========================================
+*/
+.search-form {
+	//float: right;
+	display: inline-block;
+
+	input[type="Search"] {
+		padding: rem(13px) 1.4rem;
+		border: 1px solid $neutral-gray;
+		border-radius: .2rem;
 	}
 }
 

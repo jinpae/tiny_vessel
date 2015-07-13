@@ -16,11 +16,14 @@ class ForumPosts::ForumRepliesController < ApplicationController
 	end
 
 	def edit
-
 	end
 
 	def update
-
+		if @forum_reply.update(forum_reply_params)
+			redirect_to @forum_post, notice: "Reply updated successfully."
+		else
+			render :edit
+		end
 	end
 
 	def destroy

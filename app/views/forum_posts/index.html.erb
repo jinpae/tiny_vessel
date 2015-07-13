@@ -1,9 +1,13 @@
 <section class="page-wrap">
 	<div class="container">
-		<h1 class="section-title">Forum Posts</h1>
+		<!--h1 class="section-title">Forum Posts</h1-->
 		
 		<div class="control-btn-group">
-			<%= link_to 'New Post', new_forum_post_path, class: 'btn btn-primary btn-md' %>
+			<%= search_form_for @q, html: { class: 'search-form' } do |f| %>
+				<%= f.search_field :title_or_body_or_forum_replies_body_cont, placeholder: 'Search' %>
+			<% end %>
+
+			<%= link_to 'New Post', new_forum_post_path, class: 'btn btn-primary btn-md', id: 'new-post-btn' %>
 			<div id="category-dropdown-wrap" tabindex="5">
 				<p><%= get_selected_category %> <i class="fa fa-caret-down"></i></p>
 				<ul class="dropdown">
