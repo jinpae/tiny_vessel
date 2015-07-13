@@ -65,10 +65,10 @@
 
 			.author {
 				text-decoration: none;
-				color: darken($gray, 15%);
+				font-weight: 400;
 
 				&:hover {
-					text-decoration: underline;
+					color: $sea-green;
 				}
 			}
 
