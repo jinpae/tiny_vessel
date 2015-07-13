@@ -2,13 +2,14 @@
 #
 # Table name: forum_posts
 #
-#  id          :integer          not null, primary key
-#  title       :string
-#  body        :text
-#  user_id     :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  category_id :integer
+#  id                  :integer          not null, primary key
+#  title               :string
+#  body                :text
+#  user_id             :integer
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  category_id         :integer
+#  forum_replies_count :integer          default(0)
 #
 # Indexes
 #

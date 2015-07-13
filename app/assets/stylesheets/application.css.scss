@@ -101,7 +101,7 @@ body {
 }
 
 .btn-md {
-	padding: .9rem 1.4rem;
+	padding: rem(14px) 1.4rem;
 	border-radius: .2em;
 }
 
@@ -143,7 +143,7 @@ header {
 	.navbar-brand {
 		float: left;
 		text-transform: uppercase;
-		font-size: 1.6em;
+		font-size: 1.4em;
 		letter-spacing: -1px;
 		font-weight: 700;
 	}
@@ -160,7 +160,7 @@ header {
 
 				a {
 					margin-left: 20px;
-					line-height: 26px;
+					line-height: 23px;
 				}
 			}
 		}
@@ -234,6 +234,16 @@ footer {
 		margin-left: -1px;
 	}
 
+	.gap {
+		cursor: not-allowed;
+	}
+
+	a {
+		&:hover {
+			color: $sea-green;
+		}
+	}
+
 	.disabled {
 		color: $gray;
 		cursor: not-allowed;
@@ -257,7 +267,7 @@ footer {
 #category-dropdown-wrap {
 	display: inline-block;
 	border: 1px solid $neutral-gray;
-	padding: .8rem 1.4rem;
+	padding: rem(13px) 1.4rem;
 	border-radius: .2rem;
 	cursor: pointer;
 	position: absolute;
@@ -271,10 +281,14 @@ footer {
 
 	p {
 		margin: 0;
+		margin-right: 2rem;
 
 		i {
 			color: $gray;
 			margin-left: 2rem;
+			position: absolute;
+			top: rem(13px);
+			right: 1.4rem;
 		}
 	}
 

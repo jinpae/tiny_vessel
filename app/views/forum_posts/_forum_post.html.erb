@@ -9,14 +9,14 @@
 		</h2>
 
 		<p class="post-description">
-		Posted by <strong><%= link_to get_author(forum_post), forum_post.user, class: 'author' %></strong> <%= time_ago_in_words forum_post.created_at %> ago // <span class="category-tag <%= forum_post.category.name.downcase %>"><%= forum_post.category.name %></span>
+		Posted by <strong><%= link_to get_author(forum_post), forum_post.user, class: 'author' %></strong> <%= time_ago_in_words forum_post.created_at %> ago // <span class="category-tag <%= forum_post.category.name.downcase %>"><%= link_to_category forum_post.category %></span>
 		</p>
 	</div>
 
 	<div class="post-reply-count">
 		<p class="reply-count">
-			<%= forum_post.forum_replies.count %><br>
-			<%= pluralize_without_count(forum_post.forum_replies.count, 'reply').capitalize %>
+			<%= forum_post.forum_replies_count %><br>
+			<%= pluralize_without_count(forum_post.forum_replies_count, 'reply').capitalize %>
 		</p>
 	</div>
 </div>

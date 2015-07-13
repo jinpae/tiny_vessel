@@ -5,11 +5,12 @@
 		<div class="control-btn-group">
 			<%= link_to 'New Post', new_forum_post_path, class: 'btn btn-primary btn-md' %>
 			<div id="category-dropdown-wrap" tabindex="5">
-				<p>All Categories <i class="fa fa-caret-down"></i></p>
+				<p><%= get_selected_category %> <i class="fa fa-caret-down"></i></p>
 				<ul class="dropdown">
+					<li><%= link_to 'All Categories', forum_posts_path %></li>
 					<% Category.all.each do |cat| %>
 						<li>
-							<%= link_to cat.name, '#' %>
+							<%= link_to_category cat %>
 						</li>
 					<% end %>
 				</ul>
@@ -19,7 +20,7 @@
 		<%= render @forum_posts %>
 
 		<div class="text-center">
-			<%= will_paginate @forum_posts %>
+			<%= will_paginate @forum_posts, inner_window: 2, outer_window: 1 %>
 		</div>
 	</div>
 </section>

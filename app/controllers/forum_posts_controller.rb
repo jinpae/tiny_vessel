@@ -1,6 +1,6 @@
 class ForumPostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
-	before_action :set_forum_post, except: [:index, :new, :create]
+	before_action :set_forum_post, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@forum_posts = ForumPost.page(params[:page])
@@ -36,6 +36,26 @@ class ForumPostsController < ApplicationController
 	end
 
 	def destroy
+	end
+
+	def general
+		@forum_posts = ForumPost.general.page(params[:page])
+		render :index
+	end
+
+	def front_end
+		@forum_posts = ForumPost.front_end.page(params[:page])
+		render :index
+	end
+
+	def back_end
+		@forum_posts = ForumPost.back_end.page(params[:page])
+		render :index
+	end
+
+	def design
+		@forum_posts = ForumPost.design.page(params[:page])
+		render :index
 	end
 
 	private
