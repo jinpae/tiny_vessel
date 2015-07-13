@@ -1,4 +1,4 @@
-$(document).on 'page:change', ->
+$(document).on 'page:change page:restore', ->
 	$('#category-dropdown-wrap').on 'click', ->
 		$('#category-dropdown-wrap ul').toggleClass 'dropdown-collapse-toggle'
 	
