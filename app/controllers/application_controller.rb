@@ -51,5 +51,17 @@ class ApplicationController < ActionController::Base
 			session[:previous_url] || root_path
 		end
 
+		def require_correct_user(forum_object)
+			unless current_user == forum_object.user
+				if forum_object.methods.include?(:forum_post)
+					# forum_object is a forum reply, so redirect to its post's show page
+					redirect_to forum_object.forum_post
+				else
+					# forum_object is a forum post, so redirect to its show page
+					redirect_to forum_object
+				end
+			end
+		end
+
 		helper_method :current_user?
 end

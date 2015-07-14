@@ -1,6 +1,7 @@
 class ForumPosts::ForumRepliesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_forum_post
+	before_action :require_correct_user, except: [:create]
 	before_action :set_forum_reply, except: [:create]
 
 	def create
@@ -43,5 +44,10 @@ class ForumPosts::ForumRepliesController < ApplicationController
 
 		def forum_reply_params
 			params.require(:forum_reply).permit(:body)
+		end
+
+		def require_correct_user
+			set_forum_reply
+			super @forum_reply
 		end
 end

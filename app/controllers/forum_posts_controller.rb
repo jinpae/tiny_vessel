@@ -1,6 +1,7 @@
 class ForumPostsController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :show]
-	before_action :set_forum_post, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+	before_action :require_correct_user, only: [:edit, :update, :destroy]
+	before_action :set_forum_post, only: [:show]
 	before_action :set_q, except: [:show, :new, :create, :edit, :update, :destroy]
 
 	def index
@@ -74,5 +75,10 @@ class ForumPostsController < ApplicationController
 
 		def paginate(posts)
 			posts.page(params[:page])
+		end
+
+		def require_correct_user
+			set_forum_post
+			super @forum_post
 		end
 end
