@@ -1,13 +1,20 @@
-<div id="reply-form">
+<div class="reply-form">
+	<div class="avatar-wrap">
+		<%= profile_image_for current_user, 'avatar' %>
+	</div>
+
 	<%= form_for [@forum_post, @forum_reply] do |f| %>
 		<%= render 'shared/errors', object: @forum_reply %>
 
-		<%= f.text_area :body, rows: 10, placeholder: 'Add a reply' %>
+		<%= f.text_area :body, rows: 8, placeholder: 'Add a reply' %>
+
 		<% if @forum_reply.new_record? %>
-			<%= f.submit 'Reply' %>
+			<%= f.submit 'Submit Reply', class: 'btn btn-md' %>
 		<% else %>
 				<%= f.submit 'Update' %>
 				<%= link_to 'Cancel', @forum_post %>
 		<% end %>
+
+		<%= link_to 'Parsed with Markdown', 'https://guides.github.com/features/mastering-markdown/', target: '_blank', class: 'float-right text-muted' %>
 	<% end %>
 </div>

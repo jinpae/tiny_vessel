@@ -9,7 +9,7 @@ class ForumPosts::ForumRepliesController < ApplicationController
 		@forum_reply.user = current_user
 
 		if @forum_reply.save
-			redirect_to @forum_post, notice: 'New reply submitted successfully.'
+			redirect_to forum_post_path(@forum_post, anchor: "forum_reply_#{@forum_reply.id}"), notice: 'New reply submitted successfully.'
 		else
 			set_forum_post
 			render 'forum_posts/show'
@@ -21,7 +21,7 @@ class ForumPosts::ForumRepliesController < ApplicationController
 
 	def update
 		if @forum_reply.update(forum_reply_params)
-			redirect_to @forum_post, notice: "Reply updated successfully."
+			redirect_to forum_post_path(@forum_post, anchor: "forum_reply_#{@forum_reply.id}"), notice: "Reply updated successfully."
 		else
 			render :edit
 		end

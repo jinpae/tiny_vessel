@@ -1,0 +1,10 @@
+@import 'colors';
+
+form {
+	.field_with_errors {
+		input[type],
+		textarea {
+			border-color: $pink;
+		}
+	}
+}

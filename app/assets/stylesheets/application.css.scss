@@ -19,6 +19,7 @@
 @import 'font-awesome';
 @import 'home';
 @import 'forum_post';
+@import 'form';
 
 html {
 	box-sizing: border-box;
@@ -56,6 +57,14 @@ body {
 
 .text-center {
 	text-align: center;
+}
+
+.float-right {
+	float: right;
+}
+
+.text-muted {
+	color: $gray;
 }
 
 /*

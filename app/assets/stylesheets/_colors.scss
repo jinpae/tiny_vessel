@@ -4,6 +4,9 @@ $neutral-gray: #ccc;
 $light-gray: #e6e6e6;
 $dark-green: #4b6265; 
 $sea-green: #25abb7;
+$pink: #ff7373;
+$yellow: #f2d373;
+$cream: #fdfdcf;
 
 // Elements
 $primary: #abb7b7;
@@ -19,5 +22,5 @@ $btn-normal: $sea-green;
 // Category colors
 $category-general: $primary;
 $category-front-end: #96c974;
-$category-back-end: #ff7373;
-$category-design: #f2d373;
+$category-back-end: $pink;
+$category-design: $yellow;

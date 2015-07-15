@@ -1,22 +1,31 @@
-<%= link_to '&larr; Back to the forum'.html_safe, forum_posts_path %>
+<section id="forum-post-section" class="page-wrap">
+	<div class="container">
+		<%= link_to '&larr; Back to the forum'.html_safe, forum_posts_path, class: 'back-to-forum-link' %>
+		
+		<h1 class="forum-post-title"><%= @forum_post.title %></h1>
+		
+		<div id="forum-post">
+			<div class="avatar-wrap">
+				<%= profile_image_for @forum_post.user, 'avatar' %>
+			</div>
 
-<h1><%= @forum_post.title %></h1>
+			<div class="post-content">
+				<p class="post-description">
+					Posted by <strong><%= link_to get_author(@forum_post), @forum_post.user, class: 'author' %></strong> <%= time_ago_in_words @forum_post.created_at %> ago // <span class="category-tag <%= @forum_post.category.name.downcase %>"><%= link_to_category @forum_post.category %></span>
 
-<p class="post-description">
-	Posted by <%= get_author(@forum_post) %> <%= time_ago_in_words @forum_post.created_at %> ago | <%= @forum_post.category.name %>
+					<%= link_to_edit_forum_post @forum_post %>
+				</p>
 
-	<% if current_user?(@forum_post.user) %>
-		| <%= link_to 'Edit', edit_forum_post_path(@forum_post) %>
-	<% end %>
-</p>
+				<p class="post-body"><%= @forum_post.body %></p>
+			</div>
+		</div>
+		
+		
+		<%= render partial: 'forum_posts/forum_replies/forum_reply',
+			collection: @forum_post.forum_replies %>
+		
+		<%= render_reply_form %>
 
-<p class="post-body"><%= @forum_post.body %></p>
-
-<%= render partial: 'forum_posts/forum_replies/forum_reply',
-	collection: @forum_post.forum_replies %>
-
-<% if user_signed_in? %>
-	<%= render 'forum_posts/forum_replies/form' %>
-<% else %>
-	<p>Please <%= link_to 'sign in', new_user_session_path %> to add a reply.</p>
-<% end %>
+		<%= link_to '&larr; Back to the forum'.html_safe, forum_posts_path, class: 'back-to-forum-link' %>
+	</div>
+</section>

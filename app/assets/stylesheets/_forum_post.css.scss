@@ -16,21 +16,158 @@
 	background: $category-design;
 }
 
-.post-wrap {
+.avatar-wrap {
+	float: left;
+}
+
+.avatar {
+	border-radius: 50%;
+	@include size(48px);
+}
+
+.reply-form {
+	padding: .6em 0;
+	margin: 1rem 0;
+
+	form {
+		margin-left: 4.5em;
+
+		textarea {
+			width: 100%;
+			outline: none;
+			padding: .6rem 1rem;
+			line-height: 1.5;
+			border-color: $neutral-gray;
+			border-radius: 4px;
+			margin-bottom: 1rem;
+		}
+
+		input[type='submit'] {
+			border: none;
+		}
+	}
+}
+
+#forum-post-section {
+	margin-top: 1.5rem;
+
+	#error_explanation {
+		h2 {
+			margin-top: 0;
+		}
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			color: $sea-green;
+		}
+	}
+
+	.back-to-forum-link {
+		color: $gray;
+		display: inline-block;
+		margin-bottom: 1rem;
+	}
+
+	.require-sign-in {
+		padding: 2rem 1rem 1rem 1rem;
+		color: $gray;
+	
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+h1.forum-post-title {
+	font-size: 2.5rem;
+}
+
+#forum-post,
+.post-wrap,
+.reply-wrap {
 	@extend %clearfix;
-	@include display(flex);
-	@include align-items(center);
 	padding: 1.7em 0;
 	border-bottom: 1px solid $light-gray;
+
+	.post-content {
+		.post-description {
+			margin-top: .5em;
+			margin-bottom: 0;
+			letter-spacing: 0;
+			color: $gray;
+			font-size: .85rem;
+
+			.author {
+				text-decoration: none;
+			}
+
+			.category-tag {
+				color: white;
+				text-transform: uppercase;
+				padding: .6em 1em;
+				font-size: .6rem;
+				letter-spacing: .15em;
+				border-radius: 1.5em;
+				display: inline-block;
+				vertical-align: middle;
+				
+				a {
+					text-decoration: none;
+
+					&:hover {
+						color: inherit;
+					}
+				}
+			}
+		}
+	}
+}
+
+#forum-post,
+.reply-wrap {
+	.post-content {
+		margin-left: 4.5rem;
+
+		.post-description {
+			margin: 0;
+			font-size: .9rem;
+			color: darken($gray, 20%);
+
+			i {
+				float: right;
+				line-height: 22px;
+			}
+		}
+
+		.post-body {
+			line-height: 1.5;
+			letter-spacing: .02rem;
+			margin-bottom: 0;
+		}
+	}
+}
+
+#forum-post {
+	padding-top: 0;
+}
+
+.reply-wrap {
+	&:target {
+		background-color: $cream;
+		padding: 1.7rem;
+	}
+}
+
+.post-wrap {
+	@include display(flex);
+	@include align-items(center);
 
 	.avatar-wrap,
 	.post-reply-count {
 		@include flex(none);
-	}
-
-	.avatar {
-		border-radius: 50%;
-		@include size(48px);
 	}
 
 	.avatar-wrap {
@@ -57,35 +194,9 @@
 			}
 		}
 
-		p {
-			margin-top: .5em;
-			margin-bottom: 0;
-			letter-spacing: 0;
-			color: $gray;
-			font-size: .85rem;
-
+		.post-description {
 			.author {
-				text-decoration: none;
 				font-weight: 400;
-
-				&:hover {
-					color: $sea-green;
-				}
-			}
-
-			.category-tag {
-				color: white;
-				text-transform: uppercase;
-				padding: .6em 1em;
-				font-size: .6rem;
-				letter-spacing: .15em;
-				border-radius: 1.5em;
-				display: inline-block;
-				vertical-align: middle;
-				
-				a {
-					text-decoration: none;
-				}
 			}
 		}
 	}

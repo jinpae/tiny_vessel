@@ -1,9 +1,15 @@
-<p class="reply-description">
-	Posted by <%= get_author(forum_reply) %> <%= time_ago_in_words forum_reply.created_at %> ago
+<%= div_for forum_reply, class: 'reply-wrap' do %>
+	<div class="avatar-wrap">
+		<%= profile_image_for forum_reply.user, 'avatar' %>
+	</div>
 
-	<% if current_user?(forum_reply.user) %>
-		| <%= link_to 'Edit', edit_forum_post_forum_reply_path(forum_reply.forum_post, forum_reply) %>
-	<% end %>
-</p>
+	<div class="post-content">
+		<p class="post-description">
+			Posted by <strong><%= link_to get_author(forum_reply), forum_reply.user, class: 'author' %></strong> <%= time_ago_in_words forum_reply.created_at %> ago
 
-<p class="reply-body"><%= forum_reply.body %></p>
+			<%= link_to_edit_forum_reply forum_reply %>
+		</p>
+		
+		<p class="post-body"><%= forum_reply.body %></p>
+	</div>
+<% end %>
