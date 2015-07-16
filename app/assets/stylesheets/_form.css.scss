@@ -1,9 +1,48 @@
 @import 'colors';
 
 form {
+	input,
+	textarea,
+	select {
+		border: 1px solid $neutral-gray;
+
+		&:focus {
+			border-color: $sea-green;
+		}
+	}
+
+	input[type='text'],
+	input[type='password'],
+	input[type='email'],
+	textarea,
+	select {
+		width: 100%;
+		outline: none;
+		padding: .6rem 1rem;
+		line-height: 1.5;
+		border-radius: 4px;
+		margin-bottom: 1rem;
+	}
+
+	input[type='text'],
+	input[type='password'],
+	input[type='email'],
+	textarea {
+		-webkit-appearance: none;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	input[type='submit'] {
+		border-style: none;
+	}
+
 	.field_with_errors {
-		input[type],
-		textarea {
+		input,
+		textarea,
+		select {
 			border-color: $pink;
 		}
 	}

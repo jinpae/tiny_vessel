@@ -36,6 +36,10 @@ html {
 	}
 }
 
+h1 {
+	font-size: 2.5rem;
+}
+
 a {
 	color: inherit;
 }
@@ -359,6 +363,10 @@ footer {
 		border: 1px solid $neutral-gray;
 		border-radius: .2rem;
 		outline: none;
+
+		&:focus {
+			border-color: $sea-green;
+		}
 	}
 }
 
