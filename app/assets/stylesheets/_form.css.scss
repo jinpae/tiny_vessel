@@ -1,6 +1,100 @@
 @import 'colors';
 
+#account-settings-page {
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+#forum-post-section {
+	.reply-form {
+		padding: 1.7em 0;
+	}
+}
+
+.post-form,
+.reply-form {
+	padding: 0;
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			color: $sea-green;
+		}
+	}
+
+	form {
+		margin-left: 4.5em;
+	}
+}
+
+#forum-post-section {
+	margin-top: 1.5rem;
+
+	#error_explanation {
+		h2 {
+			margin-top: 0;
+		}
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			color: $sea-green;
+		}
+	}
+
+	.back-to-forum-link {
+		color: $gray;
+		display: inline-block;
+		margin-bottom: 1.2rem;
+	}
+
+	.require-sign-in {
+		padding: 2rem 1rem 1rem 1rem;
+		color: $gray;
+	
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+.form-wrap {
+	max-width: 540px;
+	margin: 0 auto;
+}
+
+.btn-submit {
+	margin: 1rem 0;
+}
+
+.extra-link {
+	display: inline-block;
+	margin: .2rem 0;
+}
+
+.cancel-link {
+	margin-left: 1rem;
+}
+
 form {
+	a {
+		color: $gray;
+		text-decoration: none;
+
+		&:hover {
+			color: $sea-green;
+		}
+	}
+
+	label,
+	em {
+		display: inline-block;
+		margin-bottom: .3rem;
+	}
+
 	input,
 	textarea,
 	select {
@@ -40,6 +134,8 @@ form {
 	}
 
 	.field_with_errors {
+		display: inline;
+
 		input,
 		textarea,
 		select {

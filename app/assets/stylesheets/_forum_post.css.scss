@@ -25,62 +25,9 @@
 	@include size(48px);
 }
 
-.post-form,
-.reply-form {
-	padding: 1.7em 0;
-
-	.cancel-link {
-		margin-left: 1rem;
-	}
-
-	a {
-		text-decoration: none;
-
-		&:hover {
-			color: $sea-green;
-		}
-	}
-
-	form {
-		margin-left: 4.5em;
-	}
-}
-
-#forum-post-section {
-	margin-top: 1.5rem;
-
-	#error_explanation {
-		h2 {
-			margin-top: 0;
-		}
-	}
-
-	a {
-		text-decoration: none;
-
-		&:hover {
-			color: $sea-green;
-		}
-	}
-
-	.back-to-forum-link {
-		color: $gray;
-		display: inline-block;
-		margin-bottom: 1.2rem;
-	}
-
-	.require-sign-in {
-		padding: 2rem 1rem 1rem 1rem;
-		color: $gray;
-	
-		a {
-			text-decoration: underline;
-		}
-	}
-}
-
 h1.forum-post-title {
 	font-size: 3rem;
+	margin-top: .67em;
 }
 
 #forum-post,
@@ -146,6 +93,10 @@ h1.forum-post-title {
 			margin-bottom: 0;
 		}
 	}
+}
+
+#forum-post {
+	padding-top: 0;
 }
 
 .reply-wrap {
