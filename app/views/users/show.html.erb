@@ -8,10 +8,14 @@
 			<%= social_links_for @user %>
 		</div>
 
-		<div class="recent-activities">
-			<h2 class="recent-activities-title">Recent Acitivies</h2>
+		<div class="recent-posts">
+			<h2 class="recent-posts-title">Recent Posts</h2>
 
-			<%= render @recent_posts %>
+			<% if @recent_posts.any? %>
+				<%= render @recent_posts %>
+			<% else %>
+				<p>No posts found for <%= @user.identity %>...</p>
+			<% end %>
 		</div>
 	</div>
 </section>
