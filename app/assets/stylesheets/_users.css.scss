@@ -1,0 +1,56 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'colors';
+
+.profile {
+	text-align: center;
+
+	.name {
+		font-size: 1.8rem;
+		font-weight: 700;
+		margin-top: 1rem;
+		margin-bottom: .4rem;
+	}
+
+	.email {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.bio {
+		font-size: 1.2rem;
+		display: inline-block;
+		line-height: 1.5;
+		margin: 2rem 0;
+		max-width: 960px;
+	}
+
+	.social {
+		margin: 0 1rem;
+		font-size: 1.2rem;
+		color: $primary;
+		@include transition(all .2s ease-in-out);
+
+		&:hover {
+			color: $sea-green;
+		}
+	}
+
+	.social_links {
+		margin-top: .8rem;
+	}
+
+	img {
+		border-radius: 50%;
+	}
+}
+
+.recent-activities {
+	margin: 6rem 0 2rem 0;
+
+	.recent-activities-title {
+		font-size: 2rem;
+	}
+}

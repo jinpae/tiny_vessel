@@ -20,4 +20,6 @@ class ForumReply < ActiveRecord::Base
   belongs_to :forum_post, counter_cache: true
 
 	validates :body, presence: true
+
+	scope :recent_replies_from, ->(user, n=5) { where(user_id: user.id).order(created_at: :desc).limit(n) }
 end

@@ -49,4 +49,19 @@ class User < ActiveRecord::Base
 	def gravatar_id
 		Digest::MD5::hexdigest(email.downcase)
 	end
+
+	def identity
+		case
+		when name.present?
+			name
+		when username.present?
+			username
+		else
+			email
+		end
+	end
+
+	def has_social_links?
+		twitter_id.present? || github_id.present? || linkedin_id.present? || website_url.present?
+	end
 end

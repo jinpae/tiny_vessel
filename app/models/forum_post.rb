@@ -25,6 +25,7 @@ class ForumPost < ActiveRecord::Base
 	scope :front_end, -> { joins(:category).where(categories: { name: "Front-end" }) }
 	scope :back_end, -> { joins(:category).where(categories: { name: "Back-end" }) }
 	scope :design, -> { joins(:category).where(categories: { name: "Design" }) }
+	scope :recent_posts_from, ->(user, n=5) { where(user_id: user.id).order(created_at: :desc).limit(n) }
 
   belongs_to :user
   belongs_to :category

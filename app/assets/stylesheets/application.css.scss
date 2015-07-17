@@ -18,7 +18,8 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'home';
-@import 'forum_post';
+@import 'users';
+@import 'forum_posts';
 @import 'form';
 
 html {
@@ -89,6 +90,17 @@ body {
 	&:after {
 		clear: both;
 	}
+}
+
+/*
+  ========================================
+	GRID
+  ========================================
+*/
+.col-1-3 {
+	display: inline-block;
+	vertical-align: top;
+	width: 33.3%;
 }
 
 /*
