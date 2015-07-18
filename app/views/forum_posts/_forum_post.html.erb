@@ -9,7 +9,7 @@
 		</h2>
 
 		<p class="post-description">
-		Posted by <strong><%= link_to get_author(forum_post), forum_post.user, class: 'author' %></strong> <%= time_ago_in_words forum_post.created_at %> ago // <span class="category-tag <%= forum_post.category.name.downcase %>"><%= link_to_category forum_post.category %></span>
+		Posted by <strong><%= link_to get_author(forum_post), forum_post.user, class: 'author' %></strong> on <%= local_time forum_post.created_at %> &#42889;&#42889; <span class="category-tag <%= forum_post.category.name.downcase %>"><%= link_to_category forum_post.category %></span>
 		</p>
 	</div>
 

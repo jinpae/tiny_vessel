@@ -16,6 +16,10 @@
 	background: $category-design;
 }
 
+time {
+	margin-right: .4rem;
+}
+
 .avatar-wrap {
 	float: left;
 }
@@ -46,6 +50,10 @@ h1.forum-post-title {
 			font-size: .85rem;
 
 			.author {
+				&:hover {
+					color: $sea-green;
+				}
+
 				text-decoration: none;
 			}
 
@@ -58,6 +66,7 @@ h1.forum-post-title {
 				border-radius: 1.5em;
 				display: inline-block;
 				vertical-align: middle;
+				margin-left: .4rem;
 				
 				a {
 					text-decoration: none;
@@ -89,8 +98,10 @@ h1.forum-post-title {
 
 		.post-body {
 			line-height: 1.5;
-			letter-spacing: .02rem;
-			margin-bottom: 0;
+			
+			p {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

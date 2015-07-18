@@ -48,6 +48,13 @@ gem 'bourbon'
 gem 'font-awesome-sass'
 gem 'will_paginate', '~> 3.0.7'
 gem 'ransack', '~> 1.6.6'
+gem 'local_time'
+
+# HTML::Pipeline filter dependencies
+gem 'html-pipeline'
+gem 'github-markdown'
+gem 'gemoji'
+gem 'sanitize'
 
 group :development do
 	gem 'annotate'

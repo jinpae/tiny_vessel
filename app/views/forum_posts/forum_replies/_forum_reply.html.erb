@@ -5,11 +5,11 @@
 
 	<div class="post-content">
 		<p class="post-description">
-			Posted by <strong><%= link_to get_author(forum_reply), forum_reply.user, class: 'author' %></strong> <%= time_ago_in_words forum_reply.created_at %> ago
+			Posted by <strong><%= link_to get_author(forum_reply), forum_reply.user, class: 'author' %></strong> on <%= local_time forum_reply.created_at %>
 
 			<%= link_to_edit_forum_reply forum_reply %>
 		</p>
 		
-		<p class="post-body"><%= forum_reply.body %></p>
+		<div class="post-body"><%= markdown forum_reply.body %></div>
 	</div>
 <% end %>
