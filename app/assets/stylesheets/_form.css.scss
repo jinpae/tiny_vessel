@@ -86,11 +86,10 @@
 	}
 
 	.require-sign-in {
-		padding: 2rem 1rem 1rem 1rem;
-		color: $gray;
-	
-		a {
-			text-decoration: underline;
+		margin: 2rem 0;
+
+		a:hover {
+			color: white;
 		}
 	}
 }

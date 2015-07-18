@@ -28,7 +28,7 @@
 	}
 
 	.social {
-		margin: 0 1rem;
+		margin: 0 .5rem;
 		font-size: 1.2rem;
 		color: $primary;
 		@include transition(all .2s ease-in-out);
@@ -36,10 +36,6 @@
 		&:hover {
 			color: $sea-green;
 		}
-	}
-
-	.social_links {
-		margin-top: .8rem;
 	}
 
 	img {

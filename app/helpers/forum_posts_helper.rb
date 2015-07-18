@@ -28,10 +28,8 @@ module ForumPostsHelper
 		if user_signed_in?
 			render 'forum_posts/forum_replies/form'
 		else
-			content_tag :p, class: 'require-sign-in' do
-				"Please #{content_tag :strong do
-					link_to 'sign in', new_user_session_path
-				end} to add a reply.".html_safe
+			content_tag :div, class: 'require-sign-in' do
+				link_to 'Sign in to Reply', new_user_session_path, class: 'btn btn-md'
 			end
 		end
 	end
