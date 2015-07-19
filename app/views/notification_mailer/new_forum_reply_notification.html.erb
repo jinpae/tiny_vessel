@@ -1,0 +1,17 @@
+<h2>New reply in <%= @forum_reply.forum_post.title %></h2>
+
+<div class="reply-wrap">
+	<div class="avatar-wrap">
+		<%= profile_image_for @forum_reply.user, 'avatar' %>
+	</div>
+
+	<p class="reply-description">
+		<strong><%= @forum_reply.user.name %></strong> replied:
+	</p>
+
+	<p class="reply-body">
+		<%= markdown @forum_reply.body %>
+	</p>
+</div>
+
+<p><%= link_to 'Add new reply', forum_post_url(@forum_reply.forum_post, anchor: dom_id(@forum_reply)) %></p>

@@ -22,4 +22,11 @@ class ForumReply < ActiveRecord::Base
 	validates :body, presence: true
 
 	scope :recent_replies_from, ->(user, n=5) { where(user_id: user.id).order(created_at: :desc).limit(n) }
+
+	def send_notifications
+		users = forum_post.users.uniq + [forum_post.user] - [user]
+		users.each do |user|
+			NotificationMailer.new_forum_reply_notification(user, self).deliver_later
+		end
+	end
 end

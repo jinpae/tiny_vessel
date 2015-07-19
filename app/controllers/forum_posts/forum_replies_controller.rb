@@ -9,6 +9,9 @@ class ForumPosts::ForumRepliesController < ApplicationController
 		@forum_reply.user = current_user
 
 		if @forum_reply.save
+			# send email notifications to involved users
+			@forum_reply.send_notifications
+
 			redirect_to forum_post_path(@forum_post, anchor: "forum_reply_#{@forum_reply.id}"), notice: 'New reply submitted successfully.'
 		else
 			set_forum_post

@@ -99,7 +99,8 @@ h1.forum-post-title {
 		.post-body {
 			line-height: 1.5;
 			
-			p {
+			p,
+			pre {
 				margin-bottom: 0;
 			}
 		}
