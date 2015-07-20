@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TinyVessel</title>
+	<title><%= content_for?(:title) ? yield(:title) : 'A Community Forum for Web Developers and Designers | Tiny Vessel' %></title>
   <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Questrial', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
