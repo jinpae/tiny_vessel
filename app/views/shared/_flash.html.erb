@@ -1,5 +1,8 @@
 <% flash.each do |type, message| %>
 	<div id="flash-wrap" class="<%= type %>" role="alert">
-		<p><%= message %></p>
+		<p>
+			<%= message %>
+			<span class="close">&times;</span>
+		</p>
 	</div>
 <% end %>
