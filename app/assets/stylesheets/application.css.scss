@@ -191,6 +191,9 @@ header {
 		ul {
 			list-style: none;
 			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			@include transition(max-height .4s ease-in-out);
 
 			li {
 				display: inline-block;
@@ -206,6 +209,36 @@ header {
 	.navbar-toggle {
 		float: right;
 		display: none;
+		font-size: 1.3rem;
+		line-height: 23px;
+	}
+
+	@media only screen and (max-width: 500px) {
+		.navbar-toggle {
+			display: block;
+		}
+
+		nav {
+			width: 100%;
+
+			ul {
+				max-height: 0;
+
+				li:first-child {
+					margin-top: 1rem;
+				}
+
+				li {
+					display: block;
+					width: 100%;
+					padding: 1rem 0;
+				}
+			}
+		}
+
+		.navbar-collapse-toggle {
+			max-height: rem(55 * 3);
+		}
 	}
 }
 
