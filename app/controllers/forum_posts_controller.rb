@@ -10,6 +10,10 @@ class ForumPostsController < ApplicationController
 
 	def show
 		@forum_reply = ForumReply.new
+
+		if request.path != forum_post_path(@forum_post)
+			redirect_to @forum_post, status: :moved_permanently
+		end
 	end
 
 	def new
@@ -62,7 +66,7 @@ class ForumPostsController < ApplicationController
 
 	private
 		def set_forum_post
-			@forum_post = ForumPost.find(params[:id])
+			@forum_post = ForumPost.friendly.find(params[:id])
 		end
 
 		def forum_post_params

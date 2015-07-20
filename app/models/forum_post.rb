@@ -10,14 +10,20 @@
 #  updated_at          :datetime         not null
 #  category_id         :integer
 #  forum_replies_count :integer          default(0)
+#  slug                :string
 #
 # Indexes
 #
 #  index_forum_posts_on_category_id  (category_id)
+#  index_forum_posts_on_slug         (slug)
 #  index_forum_posts_on_user_id      (user_id)
 #
 
 class ForumPost < ActiveRecord::Base
+	extend FriendlyId
+	
+	friendly_id :title, use: [:slugged, :history]
+
 	default_scope { order(created_at: :desc) }
 
 	scope :latest_posts, ->(n=10) { limit(n) }
@@ -36,5 +42,9 @@ class ForumPost < ActiveRecord::Base
 	validates :body, presence: true
 	validates :category_id, presence: true
 
-	self.per_page = 20
+	self.per_page = 10
+
+	def should_generate_new_friendly_id?
+		slug.blank? || title_changed?
+	end
 end

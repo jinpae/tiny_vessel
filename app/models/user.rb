@@ -23,15 +23,19 @@
 #  linkedin_id            :string
 #  website_url            :string
 #  admin                  :boolean          default(FALSE)
+#  slug                   :string
 #
 # Indexes
 #
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_slug                  (slug)
 #  index_users_on_username              (username) UNIQUE
 #
 
 class User < ActiveRecord::Base
+	extend FriendlyId
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -41,10 +45,12 @@ class User < ActiveRecord::Base
 	has_many :forum_replies
 
 	validates :username,
-		length: { minimum: 6 },
+		length: { minimum: 3 },
 		allow_blank: true,
 		format: /\A[A-Z0-9]+[-_]*[A-Z0-9]+\z/i,
 		uniqueness: { case_sensitive: false }
+
+	friendly_id :username
 
 	def gravatar_id
 		Digest::MD5::hexdigest(email.downcase)
@@ -63,5 +69,9 @@ class User < ActiveRecord::Base
 
 	def has_social_links?
 		twitter_id.present? || github_id.present? || linkedin_id.present? || website_url.present?
+	end
+
+	def should_generate_new_friendly_id?
+		slug.blank? || username_changed?
 	end
 end

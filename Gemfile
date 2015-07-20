@@ -50,6 +50,7 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'ransack', '~> 1.6.6'
 gem 'local_time'
 gem 'sucker_punch'
+gem 'friendly_id'
 
 # HTML::Pipeline filter dependencies
 gem 'html-pipeline'

@@ -23,11 +23,13 @@
 #  linkedin_id            :string
 #  website_url            :string
 #  admin                  :boolean          default(FALSE)
+#  slug                   :string
 #
 # Indexes
 #
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_slug                  (slug)
 #  index_users_on_username              (username) UNIQUE
 #
 

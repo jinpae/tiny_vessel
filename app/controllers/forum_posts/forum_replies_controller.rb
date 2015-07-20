@@ -38,7 +38,7 @@ class ForumPosts::ForumRepliesController < ApplicationController
 
 	private
 		def set_forum_post
-			@forum_post = ForumPost.find(params[:forum_post_id])
+			@forum_post = ForumPost.friendly.find(params[:forum_post_id])
 		end
 
 		def set_forum_reply
