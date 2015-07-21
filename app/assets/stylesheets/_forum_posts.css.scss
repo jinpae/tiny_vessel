@@ -1,6 +1,10 @@
 @import 'colors';
 @import 'vars';
 
+.back-to-forum-link {
+	text-decoration: none;
+}
+
 .general {
 	color: white;
 	background: $category-general;
