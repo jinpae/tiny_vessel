@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -62,6 +62,11 @@ group :development do
 	gem 'annotate'
 	gem 'better_errors'
 	gem 'binding_of_caller'
+end
+
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
