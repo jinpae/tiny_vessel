@@ -1,5 +1,5 @@
 $(document).on 'page:change', ->
-	$('#flash-wrap').fadeIn 'slow'
+	$('#flash-wrap').fadeIn 800
 
 	setTimeout ->
 		$('#flash-wrap').fadeOut 'slow', ->

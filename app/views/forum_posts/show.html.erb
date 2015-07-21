@@ -18,6 +18,12 @@
 					<%= link_to_edit_forum_post @forum_post %>
 				</p>
 
+				<p class="post-description responsive">
+					Posted by <strong><%= link_to get_author(@forum_post), @forum_post.user, class: 'author' %></strong> on <%= local_time @forum_post.created_at %>under <span class="category-tag <%= @forum_post.category.name.downcase %>"><%= link_to_category @forum_post.category %></span>
+					
+					<%= link_to_edit_forum_post @forum_post %>
+				</p>
+
 				<div class="post-body"><%= markdown @forum_post.body %></div>
 			</div>
 		</div>

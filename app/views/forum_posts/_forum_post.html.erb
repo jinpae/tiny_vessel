@@ -9,7 +9,11 @@
 		</h2>
 
 		<p class="post-description">
-		Posted by <strong><%= link_to get_author(forum_post), forum_post.user, class: 'author' %></strong> on <%= local_time forum_post.created_at %> &#42889;&#42889; <span class="category-tag <%= forum_post.category.name.downcase %>"><%= link_to_category forum_post.category %></span>
+			Posted by <strong><%= link_to get_author(forum_post), forum_post.user, class: 'author' %></strong> on <%= local_time forum_post.created_at %> &#42889;&#42889; <span class="category-tag <%= forum_post.category.name.downcase %>"><%= link_to_category forum_post.category %></span>
+		</p>
+
+		<p class="post-description responsive">
+			Posted by <strong><%= link_to get_author(forum_post), forum_post.user, class: 'author' %></strong> on <%= local_time forum_post.created_at %>under <span class="category-tag <%= forum_post.category.name.downcase %>"><%= link_to_category forum_post.category %></span> &#8212; <%= forum_post.forum_replies_count %> <%= pluralize_without_count(forum_post.forum_replies_count, 'reply') %>
 		</p>
 	</div>
 

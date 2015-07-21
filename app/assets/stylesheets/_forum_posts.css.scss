@@ -1,19 +1,48 @@
 @import 'colors';
+@import 'vars';
 
 .general {
+	color: white;
 	background: $category-general;
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		background: initial;
+		color: $category-general;
+		font-weight: 700;
+	}
 }
 
 .front-end {
+	color: white;
 	background: $category-front-end;
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		background: initial;
+		color: $category-front-end;
+		font-weight: 700;
+	}
 }
 
 .back-end {
+	color: white;
 	background: $category-back-end;
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		background: initial;
+		color: $category-back-end;
+		font-weight: 700;
+	}
 }
 
 .design {
+	color: white;
 	background: $category-design;
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		background: initial;
+		color: $category-design;
+		font-weight: 700;
+	}
 }
 
 time {
@@ -22,6 +51,10 @@ time {
 
 .avatar-wrap {
 	float: left;
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		display: none;
+	}
 }
 
 .avatar {
@@ -32,6 +65,10 @@ time {
 h1.forum-post-title {
 	font-size: 3rem;
 	margin-top: .67em;
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		font-size: 2rem;
+	}
 }
 
 #forum-post,
@@ -42,6 +79,10 @@ h1.forum-post-title {
 	border-bottom: 1px solid $light-gray;
 
 	.post-content {
+		.responsive {
+			display: none;
+		}
+
 		.post-description {
 			margin-top: .5em;
 			margin-bottom: 0;
@@ -58,7 +99,6 @@ h1.forum-post-title {
 			}
 
 			.category-tag {
-				color: white;
 				text-transform: uppercase;
 				padding: .6em 1em;
 				font-size: .6rem;
@@ -75,6 +115,37 @@ h1.forum-post-title {
 						color: inherit;
 					}
 				}
+			}
+		}
+
+		@media only screen and (max-width: $breakpoint-tablet) {
+			.post-description {
+				display: none;
+			}
+
+			.responsive {
+				display: block;
+				line-height: 1.4;
+
+				.category-tag {
+					text-transform: none;
+					padding: 0;
+					font-size: inherit;
+					letter-spacing: initial;
+					border-radius: 0;
+					vertical-align: initial;
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+.reply-wrap {
+	.post-content {
+		@media only screen and (max-width: $breakpoint-tablet) {
+			.post-description {
+				display: block;
 			}
 		}
 	}
@@ -104,6 +175,14 @@ h1.forum-post-title {
 				margin-bottom: 0;
 			}
 		}
+
+		@media only screen and (max-width: $breakpoint-tablet) {
+			margin-left: 0;
+
+			.post-description {
+				margin-bottom: 1.3rem;
+			}
+		}
 	}
 }
 
@@ -125,6 +204,10 @@ h1.forum-post-title {
 	.avatar-wrap,
 	.post-reply-count {
 		@include flex(none);
+
+		@media only screen and (max-width: $breakpoint-tablet) {
+			display: none;
+		}
 	}
 
 	.avatar-wrap {

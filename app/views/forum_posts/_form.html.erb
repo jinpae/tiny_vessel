@@ -17,6 +17,6 @@
 		<% end %>
 	
 		<%= link_to 'Cancel', @forum_post.new_record? ? forum_posts_path : @forum_post, class: 'text-muted cancel-link' %>
-		<%= link_to 'Parsed with Markdown', 'https://guides.github.com/features/mastering-markdown/', target: '_blank', class: 'float-right text-muted' %>
+		<%= link_to 'Parsed with Markdown', 'https://guides.github.com/features/mastering-markdown/', target: '_blank', class: 'float-right text-muted markdown-link' %>
 	<% end %>
 </div>

@@ -44,6 +44,12 @@
 			font-size: 1.7rem;
 			line-height: 1.5;
 		}
+
+		@media only screen and (max-width: 1200px) {
+			.curly-braces {
+				display: none;
+			}
+		}
 	}
 
 	.cta-btn-group {
@@ -62,6 +68,19 @@
 
 			&:hover {
 				box-shadow: 0px 0px 0px 2px $primary, 0px 0px 0px 4px $btn-main;
+			}
+		}
+
+		@media only screen and (max-width: 480px) {
+			margin: 1.4rem 0 0 0;
+
+			a:first-child {
+				margin-right: 0px;
+				margin-bottom: 1.5rem;
+			}
+			
+			a {
+				width: 100%;
 			}
 		}
 	}

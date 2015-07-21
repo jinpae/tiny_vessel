@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'vars';
 
 #account-settings-page {
 	max-width: 760px;
@@ -13,6 +14,13 @@
 	.inner-form-wrap {
 		background-color: $light-gray;
 		padding: 1.6rem;
+
+		@media only screen and (max-width: $breakpoint-tablet) {
+			.col-1-3 {
+				width: 100%;
+				padding: 0;
+			}
+		}
 	}
 
 	.avatar-wrap {
@@ -41,6 +49,10 @@
 
 #forum-post-section {
 	.reply-form {
+		input[type="Submit"] {
+			margin-right: 1rem;
+		}
+
 		padding: 1.7em 0;
 	}
 }
@@ -59,6 +71,16 @@
 
 	form {
 		margin-left: 4.5em;
+
+		@media only screen and (max-width: $breakpoint-tablet) {
+			margin-left: 0;
+
+			.markdown-link {
+				float: none;
+				display: inline-block;
+				margin-top: 1rem;
+			}
+		}
 	}
 }
 
@@ -109,7 +131,7 @@
 }
 
 .cancel-link {
-	margin-left: 1rem;
+	margin: 0 1rem;
 }
 
 form {
@@ -134,12 +156,13 @@ form {
 	em,
 	i {
 		color: $gray;
+		display: inline-block;
+		margin-bottom: .3rem;
 	}
 
 	label,
-	em {
-		display: inline-block;
-		margin-bottom: .3rem;
+	em,
+	i{
 	}
 
 	input,

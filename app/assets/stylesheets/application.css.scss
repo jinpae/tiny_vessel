@@ -21,6 +21,7 @@
 @import 'users';
 @import 'forum_posts';
 @import 'form';
+@import 'vars';
 
 html {
 	box-sizing: border-box;
@@ -40,6 +41,10 @@ html {
 h1 {
 	font-size: 3rem;
 	margin-top: 0;
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		font-size: 2rem;
+	}
 }
 
 a {
@@ -56,9 +61,20 @@ body {
 }
 
 .container {
-	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 30px;
+
+	@media (min-width: 768px) {
+		width: 750px;
+	}
+	
+	@media (min-width: 992px) {
+		width: 970px;
+	}
+	
+	@media (min-width: 1200px) {
+		width: 1170px;
+	}
 }
 
 .text-center {
@@ -156,6 +172,16 @@ body {
 		float: right;
 		margin-right: 194px;
 	}
+
+	@media only screen and (max-width: 620px) {
+		margin-bottom: 4rem;
+
+		#new-post-btn {
+			float: none;
+			display: block;
+			margin: .5rem 0;
+		}
+	}
 }
 
 /*
@@ -168,6 +194,12 @@ header {
 	@include flex(none);
 	padding: 1rem 0;
 	border-bottom: 1px solid $light-gray;
+
+	.navigation {
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 0 30px;
+	}
 
 	a {
 		text-decoration: none;
@@ -393,6 +425,10 @@ footer {
 		max-height: calc(4 * 2rem + 4rem);
 		margin-top: 1rem;
 	}
+
+	@media only screen and (max-width: 620px) {
+		width: 100%;
+	}
 }
 
 /*
@@ -405,6 +441,7 @@ footer {
 	display: inline-block;
 
 	input[type="Search"] {
+		box-sizing: border-box;
 		padding: rem(13px) 1.4rem;
 		border: 1px solid $neutral-gray;
 		border-radius: .2rem;
@@ -412,6 +449,14 @@ footer {
 
 		&:focus {
 			border-color: $sea-green;
+		}
+	}
+
+	@media only screen and (max-width: 620px) {
+		display: block;
+
+		input[type="Search"] {
+			width: 100%;
 		}
 	}
 }
